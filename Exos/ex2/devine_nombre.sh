@@ -35,10 +35,6 @@ if [ "$3" = "difficile" ]; then
     echo "Mode difficile activé : vous avez seulement 3 essais !"
 fi
 
-
-# nombre_essais=5
-# nombre=$(( $RANDOM % 100 + 1 ))
-
 nombre=$(( RANDOM % (max - min + 1) + min ))
 
 echo "Jeu : Devinez le nombre entre $min et $max"
@@ -56,17 +52,6 @@ while [ $nombre_essais -gt 0 ]; do
         echo "Erreur : veuillez entrer un nombre entier valide."
         continue
     fi
-
-    # if [ $nombre -eq $var ]; then
-    #     echo "Bravo vous avez trouvé le nombre !"
-    #     break
-    # elif [ $nombre -lt $var ]; then
-    #     echo "Le nombre est plus petit"
-    #     ((nombre_essais--))
-    # elif [ $nombre -gt $var ]; then
-    #     echo "Le nombre est plus grand"
-    #     ((nombre_essais--))
-    # fi
 
     if [ "$nombre" -eq "$var" ]; then
         echo "Bravo vous avez trouvé le nombre !"
